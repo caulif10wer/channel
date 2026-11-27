@@ -13,6 +13,10 @@ body{margin:0;background:#12112A}
 a{color:#F2C14E}a:hover{color:#FFE08A}
 table{border-collapse:collapse}
 html{scroll-behavior:smooth}
+#toc{scroll-margin-top:24px}
+.toc-btn{position:fixed;right:20px;bottom:20px;z-index:10;display:inline-flex;align-items:center;min-height:48px;padding:0 18px;background:#1C1A3D;border:3px solid #F2C14E;border-radius:6px;box-shadow:0 0 0 3px #12112A;font-family:'DotGothic16',monospace;font-size:16px;color:#F2C14E;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .2s}
+.toc-btn.show{opacity:1;pointer-events:auto}
+.toc-btn:hover{color:#FFE08A;border-color:#FFE08A}
 @media (max-width: 600px){ h1{font-size:34px !important} h2{font-size:26px !important} header{padding:24px !important} }
 </style>
 </head>
@@ -24,7 +28,7 @@ html{scroll-behavior:smooth}
 <p style="margin: 0; font-family: 'DotGothic16', monospace; font-size: 18px; letter-spacing: 2px; color: #F2C14E">twitch.tv/caulif10wer</p>
 <h1 style="margin: 0; font-family: 'DotGothic16', monospace; font-size: 52px; line-height: 1.25; font-weight: 400">カリフのチャンネルで<br>遊べること</h1>
 <p style="margin: 0; font-size: 18px; line-height: 1.8; color: #C9C5E3">チャンネルポイントの報酬、チンチロ、チャットコマンド、配信中に起きる演出をまとめました。見てるだけでポイントは貯まるので、気軽に遊んでいってください。</p>
-<nav aria-label="ページ内リンク" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<nav id="toc" aria-label="ページ内リンク" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
 <a href="#points" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 2px solid #3A3670; border-radius: 4px; text-decoration: none; font-weight: 700">チャンネルポイント</a>
 <a href="#chinchiro" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 2px solid #3A3670; border-radius: 4px; text-decoration: none; font-weight: 700">チンチロ</a>
 <a href="#commands" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 2px solid #3A3670; border-radius: 4px; text-decoration: none; font-weight: 700">チャットコマンド</a>
@@ -184,5 +188,9 @@ html{scroll-behavior:smooth}
 
 </div>
 </div>
+<a href="#toc" class="toc-btn" aria-label="目次に戻る">▲ 目次</a>
+<script>
+(function(){var b=document.querySelector('.toc-btn'),n=document.getElementById('toc');if(!b||!n||!('IntersectionObserver' in window)){if(b)b.classList.add('show');return;}new IntersectionObserver(function(e){b.classList.toggle('show',!e[0].isIntersecting);}).observe(n);})();
+</script>
 </body>
 </html>
